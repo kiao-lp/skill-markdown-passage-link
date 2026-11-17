@@ -1,0 +1,9 @@
+{
+  "name": "markdown-passage-link",
+  "version": "1.0.0",
+  "description": "markdown-passage-link skill",
+  "targets": [
+    "codex",
+    "claude"
+  ]
+}
