@@ -1,6 +1,6 @@
 {
   "name": "markdown-passage-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "markdown-passage-link skill",
   "targets": [
     "codex",
