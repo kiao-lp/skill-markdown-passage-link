@@ -5,7 +5,7 @@ description: This skill should be used when the user asks to "link to a passage"
 
 # Passage links — pointing at words, not just at a file
 
-A **passage link** is a link to a markdown document of the store that quotes some of its words.
+A **passage link** identifies a Markdown document and quotes some of its words.
 Opened, Dashboard finds those words in the rendered preview, paints them, and scrolls them about a
 third of the way down the pane — where a passage reads best, with what leads into it still above and
 what follows still below.
@@ -13,8 +13,7 @@ what follows still below.
 ```
 /units/abc/cadre.md#text=the%20frame%20is%20drawn%20once
 └──────────┬───────┘└──┬─────────────────────────────────┘
-   the ordinary bare   the passage: `#text=` and up to four terms
-   internal link
+   the DCMS link       the passage fragment with up to four terms
 ```
 
 Reach for one instead of naming a file whenever the point is a sentence, a rule, a definition or a
@@ -116,8 +115,8 @@ wins. That is worth using when a document is being edited and the exact wording 
 
 ## Writing one into a document
 
-An ordinary markdown link, with the path in the store's bare internal form — leading slash, from
-the store root, no domain and no `/dashboard`:
+Use a DCMS link with a `#text=` fragment as the Markdown destination. A DCMS link starts
+with `/` and resolves from the DCMS root. Dashboard adds its mount point when rendering.
 
 ```markdown
 The rule is stated in [the frame's charter](/units/abc/cadre.md#text=is%20drawn%20once%20and%20read).
@@ -140,10 +139,9 @@ See [the lantern paragraph](/smoke/notes.md#text=The%20lantern%20is%20lit) below
 
 ## The human's way to get one
 
-Select text in the preview, right-click it, **Copy link to this passage**. That produces an absolute
-URL, which works pasted into a mail or a chat; pasted back into a document of the store it is
-recognised as internal and stripped to its bare form, fragment and all. The same menu still offers a
-plain **Copy** — and everywhere other than over selected text, the browser's own menu is left alone.
+Select text in the preview, right-click it, and choose **Copy link to this passage**. The
+command copies an absolute Dashboard URL for sharing. Pasting it into Markdown in Dashboard
+converts it to a DCMS link with the same fragment. Choose **Copy** to copy the selected text.
 
 ## Common Mistakes to Avoid
 
@@ -159,6 +157,5 @@ plain **Copy** — and everywhere other than over selected text, the browser's o
 - **Assuming a repeated sentence resolves to the one you meant.** It resolves to the first. Add
   context, or quote more of the passage.
 - **Putting the whole passage in `start` when it is long.** Use `start,end`; the URL is for pasting.
-- **Writing the resolved path.** `/dashboard/units/abc/cadre.md` is what the browser sees, not what a
-  document stores. Store `/units/abc/cadre.md` — the app adds its own mount point when it renders
-  the link.
+- **Writing the mounted href.** Use the DCMS link `/units/abc/cadre.md` in the Markdown
+  destination. Dashboard renders the href `/dashboard/units/abc/cadre.md` at its default mount.
