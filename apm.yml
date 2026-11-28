@@ -1,9 +1,1 @@
-{
-  "name": "markdown-passage-link",
-  "version": "1.0.1",
-  "description": "markdown-passage-link skill",
-  "targets": [
-    "codex",
-    "claude"
-  ]
-}
+{"name": "markdown-passage-link", "version": "1.0.2", "description": "markdown-passage-link skill", "targets": ["codex", "claude"]}
